@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore a wide range of free online tools for PDF processing. Compress PDFs, convert PDFs to Word, and more!">
-    <meta name="keywords" content="PDF tools, compress PDF, convert PDF, online PDF tools, free tools">
+    <meta name="description" content="Explore a wide range of free online tools for PDF processing. Compress, merge, split, and unlock PDF files with ease.">
+    <meta name="keywords" content="online tools, PDF tools, compress PDF, merge PDF, split PDF, unlock PDF, free tools">
     <meta name="author" content="Mohsin Rajput">
-    <title>PDF Tools - Online PDF Processing Tools</title>
+    <title>PDF Tools - Free Online PDF Processing Tools</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
@@ -24,6 +24,9 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -36,7 +39,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 28px;
         }
 
         nav {
@@ -54,19 +57,20 @@
             transition: color 0.3s;
         }
 
+        nav a.active {
+            color: #ffdd57;
+        }
+
         nav a:hover {
             color: #ffdd57;
         }
 
-        nav a.active {
-            color: #ffdd57;
-            font-weight: 600;
-        }
-
         main {
+            flex: 1;
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .hero {
@@ -146,6 +150,16 @@
             text-align: center;
             padding: 20px;
             margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
         }
 
         footer p {
@@ -165,24 +179,34 @@
             .tools-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Online Tools</h1>
+        <h1>PDF Tools</h1>
     </header>
     <nav>
         <a href="index.html">Home</a>
         <a href="img-tools.html">Image Tools</a>
         <a href="pdf-tools.html" class="active">PDF Tools</a>
-        <a href="about.html">About</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
     </nav>
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h2>PDF Tools</h2>
-            <p>Explore a wide range of free tools for PDF processing. Compress PDFs, convert PDFs to Word, and more!</p>
+            <h2>PDF Processing Made Easy</h2>
+            <p>Explore a wide range of free tools for PDF processing. Compress, merge, split, and unlock PDF files with ease.</p>
         </section>
 
         <!-- Tools Grid -->
@@ -195,25 +219,51 @@
                 <a href="pdf-compress.html">Use Tool</a>
             </div>
 
-            <!-- PDF to Word Converter -->
+            <!-- PDF Merger -->
             <div class="tool-card">
-                <i class="fas fa-file-export"></i>
-                <h3>PDF to Word</h3>
-                <p>Convert PDF files to editable Word documents.</p>
-                <a href="pdf-convert.html">Use Tool</a>
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Merger</h3>
+                <p>Merge multiple PDF files into a single document.</p>
+                <a href="pdf-merge.html">Use Tool</a>
             </div>
 
-            <!-- Word to PDF Converter -->
+            <!-- PDF Splitter -->
             <div class="tool-card">
-                <i class="fas fa-file-import"></i>
-                <h3>Word to PDF</h3>
-                <p>Convert Word documents to PDF files.</p>
-                <a href="word-convert.html">Use Tool</a>
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Splitter</h3>
+                <p>Split a PDF file into multiple documents.</p>
+                <a href="pdf-split.html">Use Tool</a>
+            </div>
+
+            <!-- PDF Unlocker -->
+            <div class="tool-card">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Unlocker</h3>
+                <p>Remove password protection from PDF files.</p>
+                <a href="pdf-unlock.html">Use Tool</a>
             </div>
         </section>
     </main>
     <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
         <p>&copy; 2025 Online Tools. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Highlight active navigation link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
