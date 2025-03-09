@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Text Case Converter Tool. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more instantly.">
+    <meta name="keywords" content="text case converter, uppercase, lowercase, title case, sentence case, alternating case, free text tools">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Text Case Converter Tool - Free Online Text Conversion</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .tool-container.dark-mode {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .text-input {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .text-input.dark-mode {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #777;
+        }
+
+        .case-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .case-buttons button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .case-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .output-section {
+            margin-top: 20px;
+        }
+
+        .output-section textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .output-section textarea.dark-mode {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #777;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .action-buttons button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #218838;
+        }
+
+        .adsense-ad {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .case-buttons {
+                flex-direction: column;
+            }
+
+            .case-buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Text Case Converter Tool -->
+        <section class="tool-container">
+            <h2>Text Case Converter Tool</h2>
+
+            <!-- Text Input Section -->
+            <textarea class="text-input" id="textInput" placeholder="Enter or paste your text here..."></textarea>
+
+            <!-- Case Conversion Buttons -->
+            <div class="case-buttons">
+                <button id="uppercaseBtn">UPPERCASE</button>
+                <button id="lowercaseBtn">lowercase</button>
+                <button id="titleCaseBtn">Title Case</button>
+                <button id="sentenceCaseBtn">Sentence case</button>
+                <button id="alternatingCaseBtn">aLtErNaTiNg cAsE</button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <textarea class="text-input" id="textOutput" placeholder="Converted text will appear here..." readonly></textarea>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="copyBtn">Copy to Clipboard</button>
+                <button id="downloadBtn">Download as Text File</button>
+            </div>
+
+            <!-- AdSense Ad at the Bottom -->
+            <div class="adsense-ad">
+                <!-- Replace with your AdSense script -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="XXXXXXXXXX"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Text Case Converter Logic
+        const textInput = document.getElementById('textInput');
+        const textOutput = document.getElementById('textOutput');
+        const uppercaseBtn = document.getElementById('uppercaseBtn');
+        const lowercaseBtn = document.getElementById('lowercaseBtn');
+        const titleCaseBtn = document.getElementById('titleCaseBtn');
+        const sentenceCaseBtn = document.getElementById('sentenceCaseBtn');
+        const alternatingCaseBtn = document.getElementById('alternatingCaseBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // UPPERCASE Conversion
+        uppercaseBtn.addEventListener('click', () => {
+            textOutput.value = textInput.value.toUpperCase();
+        });
+
+        // lowercase Conversion
+        lowercaseBtn.addEventListener('click', () => {
+            textOutput.value = textInput.value.toLowerCase();
+        });
+
+        // Title Case Conversion
+        titleCaseBtn.addEventListener('click', () => {
+            textOutput.value = textInput.value
+                .toLowerCase()
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        });
+
+        // Sentence Case Conversion
+        sentenceCaseBtn.addEventListener('click', () => {
+            textOutput.value = textInput.value
+                .toLowerCase()
+                .replace(/(^\s*\w|[.!?]\s*\w)/g, match => match.toUpperCase());
+        });
+
+        // Alternating Case Conversion
+        alternatingCaseBtn.addEventListener('click', () => {
+            let result = '';
+            let toggle = true;
+            for (const char of textInput.value) {
+                result += toggle ? char.toUpperCase() : char.toLowerCase();
+                toggle = !toggle;
+            }
+            textOutput.value = result;
+        });
+
+        // Copy to Clipboard
+        copyBtn.addEventListener('click', () => {
+            textOutput.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard!');
+        });
+
+        // Download as Text File
+        downloadBtn.addEventListener('click', () => {
+            const blob = new Blob([textOutput.value], { type: 'text/plain' });
+            const downloadLink = document.createElement('a');
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = 'converted-text.txt';
+            downloadLink.click();
+        });
+    </script>
+</body>
+</html>
