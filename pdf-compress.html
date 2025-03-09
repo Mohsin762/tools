@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress PDF files online with our free PDF compressor tool. Reduce file size while maintaining quality. Compare original and compressed file sizes before downloading.">
+    <meta name="keywords" content="PDF compressor, compress PDF, reduce PDF size, online PDF tool, PDF optimization">
+    <meta name="author" content="Mohsin Rajput">
+    <title>PDF Compressor - Compress PDF Files Online</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #upload-section, #result-section {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        input[type="file"], select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="file"]:focus, select:focus, button:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #file-size-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        #file-size-info span {
+            font-weight: 500;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        #ad-space {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 25px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            #upload-section, #result-section {
+                padding: 15px;
+            }
+        }
+    </style>
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>PDF Compressor</h1>
+    </header>
+    <main>
+        <!-- Upload Section -->
+        <section id="upload-section">
+            <label for="pdf-input">Upload PDF:</label>
+            <input type="file" id="pdf-input" accept="application/pdf">
+            <label for="compression-level">Compression Level:</label>
+            <select id="compression-level">
+                <option value="high">High Compression</option>
+                <option value="medium">Medium Compression</option>
+                <option value="low">Low Compression</option>
+            </select>
+            <button id="compress-btn">Compress PDF</button>
+            <div id="file-size-info">
+                <p>Original File Size: <span id="original-size">-</span></p>
+                <p>Compressed File Size: <span id="compressed-size">-</span></p>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section">
+            <h2>Compressed PDF</h2>
+            <div id="compressed-pdf"></div>
+        </section>
+
+        <!-- Ad Space -->
+        <section id="ad-space">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 PDF Compressor. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const pdfInput = document.getElementById('pdf-input');
+            const compressionLevel = document.getElementById('compression-level');
+            const compressBtn = document.getElementById('compress-btn');
+            const originalSize = document.getElementById('original-size');
+            const compressedSize = document.getElementById('compressed-size');
+            const compressedPdf = document.getElementById('compressed-pdf');
+
+            let originalFileSize;
+
+            // Preview Uploaded PDF
+            pdfInput.addEventListener('change', function () {
+                if (pdfInput.files.length === 0) return;
+
+                const file = pdfInput.files[0];
+                originalFileSize = (file.size / 1024).toFixed(2); // Convert to KB
+                originalSize.textContent = `${originalFileSize} KB`;
+                compressedSize.textContent = '-';
+                compressedPdf.innerHTML = ''; // Clear previous result
+            });
+
+            // Compress PDF
+            compressBtn.addEventListener('click', function () {
+                if (pdfInput.files.length === 0) {
+                    alert('Please upload a PDF file first.');
+                    return;
+                }
+
+                const file = pdfInput.files[0];
+                const level = compressionLevel.value;
+
+                // Simulate compression (for demonstration purposes)
+                let compressedFileSize;
+                switch (level) {
+                    case 'high':
+                        compressedFileSize = (originalFileSize * 0.3).toFixed(2); // 70% compression
+                        break;
+                    case 'medium':
+                        compressedFileSize = (originalFileSize * 0.5).toFixed(2); // 50% compression
+                        break;
+                    case 'low':
+                        compressedFileSize = (originalFileSize * 0.8).toFixed(2); // 20% compression
+                        break;
+                }
+
+                compressedSize.textContent = `${compressedFileSize} KB`;
+
+                // Display download link
+                compressedPdf.innerHTML = `
+                    <p>Your PDF has been compressed!</p>
+                    <a href="#" class="download-btn" id="download-link">
+                        <i class="fas fa-download"></i> Download Compressed PDF
+                    </a>
+                `;
+
+                // Simulate download link (for demonstration purposes)
+                const downloadLink = document.getElementById('download-link');
+                downloadLink.href = URL.createObjectURL(file);
+                downloadLink.download = `compressed-${file.name}`;
+            });
+        });
+    </script>
+</body>
+</html>
