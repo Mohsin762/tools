@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Image Cropper Tool. Crop images to custom sizes or predefined aspect ratios like 1:1, 16:9, and 4:3. Download cropped images in JPG or PNG format.">
+    <meta name="keywords" content="image cropper, crop image, free image tools, image editing, crop tool, JPG, PNG, WebP">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Image Cropper Tool - Free Online Image Cropping</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Cropper.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .upload-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .upload-section input[type="file"] {
+            display: none;
+        }
+
+        .upload-section label {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-section label:hover {
+            background-color: #0056b3;
+        }
+
+        .cropper-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cropper-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .aspect-ratio-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .aspect-ratio-buttons button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .aspect-ratio-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .download-section button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-section button:hover {
+            background-color: #218838;
+        }
+
+        .adsense-ad {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tool-container h2 {
+                font-size: 22px;
+            }
+
+            .aspect-ratio-buttons {
+                flex-wrap: wrap;
+            }
+
+            .aspect-ratio-buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Image Cropper Tool -->
+        <section class="tool-container">
+            <h2>Image Cropper Tool</h2>
+
+            <!-- Image Upload Section -->
+            <div class="upload-section">
+                <input type="file" id="imageUpload" accept="image/*">
+                <label for="imageUpload">Upload Image</label>
+            </div>
+
+            <!-- Cropper Container -->
+            <div class="cropper-container">
+                <img id="imageToCrop" src="" alt="Uploaded Image" style="display: none;">
+            </div>
+
+            <!-- Aspect Ratio Buttons -->
+            <div class="aspect-ratio-buttons">
+                <button data-ratio="1">Freehand</button>
+                <button data-ratio="1/1">1:1</button>
+                <button data-ratio="16/9">16:9</button>
+                <button data-ratio="4/3">4:3</button>
+            </div>
+
+            <!-- Download Section -->
+            <div class="download-section">
+                <button id="downloadBtn">Download Cropped Image</button>
+            </div>
+
+            <!-- AdSense Ad at the Bottom -->
+            <div class="adsense-ad">
+                <!-- Replace with your AdSense script -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="XXXXXXXXXX"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <!-- Cropper.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script>
+        // Initialize Cropper
+        let cropper;
+        const imageUpload = document.getElementById('imageUpload');
+        const imageToCrop = document.getElementById('imageToCrop');
+        const aspectRatioButtons = document.querySelectorAll('.aspect-ratio-buttons button');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Handle Image Upload
+        imageUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imageToCrop.src = event.target.result;
+                    imageToCrop.style.display = 'block';
+
+                    // Initialize Cropper.js
+                    if (cropper) {
+                        cropper.destroy();
+                    }
+                    cropper = new Cropper(imageToCrop, {
+                        aspectRatio: 1, // Default aspect ratio
+                        viewMode: 1,
+                        autoCropArea: 1,
+                        responsive: true,
+                        guides: true,
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle Aspect Ratio Buttons
+        aspectRatioButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const ratio = button.getAttribute('data-ratio');
+                if (ratio === '1') {
+                    cropper.setAspectRatio(NaN); // Freehand
+                } else {
+                    cropper.setAspectRatio(eval(ratio)); // Predefined ratios
+                }
+            });
+        });
+
+        // Handle Download Button
+        downloadBtn.addEventListener('click', () => {
+            if (cropper) {
+                const croppedCanvas = cropper.getCroppedCanvas();
+                const downloadLink = document.createElement('a');
+                downloadLink.href = croppedCanvas.toDataURL('image/png');
+                downloadLink.download = 'cropped-image.png';
+                downloadLink.click();
+            } else {
+                alert('Please upload and crop an image first.');
+            }
+        });
+    </script>
+</body>
+</html>
