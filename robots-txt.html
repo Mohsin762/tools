@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate and customize a robots.txt file for your website. Control search engine crawling and indexing with ease.">
+    <meta name="keywords" content="robots.txt generator, SEO tools, search engine optimization, crawl control, sitemap integration">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Robots.txt Generator - Online Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inline CSS for Fast Loading -->
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 12px 24px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            border: none; /* Removes border */
+            outline: none; /* Removes outline */
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button-group button {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- AdSense Script (Replace with your AdSense code) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Ad Unit 1 -->
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="tool-container">
+            <h2>Robots.txt Generator</h2>
+            <p>Create and customize a robots.txt file for your website.</p>
+
+            <!-- User-Agent Selection -->
+            <div class="form-group">
+                <label for="user-agent">Select User-Agent</label>
+                <select id="user-agent">
+                    <option value="*">All Bots (*)</option>
+                    <option value="Googlebot">Googlebot</option>
+                    <option value="Bingbot">Bingbot</option>
+                    <option value="Yandex">Yandex</option>
+                    <option value="Baidu">Baidu</option>
+                </select>
+            </div>
+
+            <!-- Allow/Disallow Sections -->
+            <div class="form-group">
+                <label>Allow/Disallow Website Sections</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="section" value="/"> Allow Entire Website</label>
+                    <label><input type="checkbox" name="section" value="/private/"> Disallow /private/</label>
+                    <label><input type="checkbox" name="section" value="/admin/"> Disallow /admin/</label>
+                    <label><input type="checkbox" name="section" value="/images/"> Disallow /images/</label>
+                </div>
+            </div>
+
+            <!-- Sitemap Integration -->
+            <div class="form-group">
+                <label for="sitemap">Sitemap URL</label>
+                <input type="url" id="sitemap" placeholder="Enter your sitemap URL (e.g., https://example.com/sitemap.xml)">
+            </div>
+
+            <!-- Crawl Delay -->
+            <div class="form-group">
+                <label for="crawl-delay">Crawl Delay (in seconds)</label>
+                <input type="number" id="crawl-delay" placeholder="Enter crawl delay (e.g., 5)">
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button id="generate-btn">Generate Robots.txt</button>
+                <button id="copy-btn">Copy to Clipboard</button>
+                <button id="download-btn">Download Robots.txt</button>
+            </div>
+
+            <!-- Output -->
+            <pre id="output"></pre>
+        </div>
+
+        <!-- Ad Unit 2 -->
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Functionality -->
+    <script>
+        // DOM Elements
+        const userAgentSelect = document.getElementById('user-agent');
+        const sectionCheckboxes = document.querySelectorAll('input[name="section"]');
+        const sitemapInput = document.getElementById('sitemap');
+        const crawlDelayInput = document.getElementById('crawl-delay');
+        const generateBtn = document.getElementById('generate-btn');
+        const copyBtn = document.getElementById('copy-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const output = document.getElementById('output');
+
+        // Generate Robots.txt
+        generateBtn.addEventListener('click', () => {
+            let robotsTxt = `User-agent: ${userAgentSelect.value}\n`;
+
+            sectionCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    robotsTxt += `Disallow: ${checkbox.value}\n`;
+                }
+            });
+
+            if (sitemapInput.value) {
+                robotsTxt += `Sitemap: ${sitemapInput.value}\n`;
+            }
+
+            if (crawlDelayInput.value) {
+                robotsTxt += `Crawl-delay: ${crawlDelayInput.value}\n`;
+            }
+
+            output.textContent = robotsTxt;
+        });
+
+        // Copy to Clipboard
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(output.textContent);
+            alert('Robots.txt copied to clipboard!');
+        });
+
+        // Download Robots.txt
+        downloadBtn.addEventListener('click', () => {
+            const blob = new Blob([output.textContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'robots.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
