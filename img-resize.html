@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resize images online with our free image resizer tool. Customize dimensions, maintain aspect ratio, and choose between pixel or percentage-based resizing.">
+    <meta name="keywords" content="image resizer, resize images, online image tool, pixel resizing, percentage scaling">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Image Resizer - Resize Images Online</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #upload-section, #result-section {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        input[type="file"], input[type="number"], select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="file"]:focus, input[type="number"]:focus, select:focus, button:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #image-preview, #resized-image {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        #image-preview img, #resized-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        #image-preview img:hover, #resized-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        #ad-space {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 25px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            #upload-section, #result-section {
+                padding: 15px;
+            }
+        }
+    </style>
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Image Resizer</h1>
+    </header>
+    <main>
+        <!-- Upload Section -->
+        <section id="upload-section">
+            <label for="image-input">Upload Image:</label>
+            <input type="file" id="image-input" accept="image/*">
+            <label for="resize-type">Resize Type:</label>
+            <select id="resize-type">
+                <option value="pixel">Pixel-Based Resizing</option>
+                <option value="percentage">Percentage-Based Scaling</option>
+            </select>
+            <label for="width">Width:</label>
+            <input type="number" id="width" placeholder="Enter width">
+            <label for="height">Height:</label>
+            <input type="number" id="height" placeholder="Enter height">
+            <label for="maintain-aspect-ratio">
+                <input type="checkbox" id="maintain-aspect-ratio"> Maintain Aspect Ratio
+            </label>
+            <button id="resize-btn">Resize Image</button>
+        </section>
+
+        <!-- Preview Section -->
+        <section id="preview-section">
+            <h2>Uploaded Image</h2>
+            <div id="image-preview"></div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section">
+            <h2>Resized Image</h2>
+            <div id="resized-image"></div>
+        </section>
+
+        <!-- Ad Space -->
+        <section id="ad-space">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Image Resizer. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageInput = document.getElementById('image-input');
+            const resizeType = document.getElementById('resize-type');
+            const widthInput = document.getElementById('width');
+            const heightInput = document.getElementById('height');
+            const maintainAspectRatio = document.getElementById('maintain-aspect-ratio');
+            const resizeBtn = document.getElementById('resize-btn');
+            const imagePreview = document.getElementById('image-preview');
+            const resizedImage = document.getElementById('resized-image');
+
+            let originalWidth, originalHeight;
+
+            // Preview Uploaded Image
+            imageInput.addEventListener('change', function () {
+                imagePreview.innerHTML = ''; // Clear previous preview
+                if (imageInput.files.length === 0) return;
+
+                const file = imageInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = function () {
+                        originalWidth = img.width;
+                        originalHeight = img.height;
+                        imagePreview.appendChild(img);
+                    };
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Resize Image
+            resizeBtn.addEventListener('click', function () {
+                if (imageInput.files.length === 0) {
+                    alert('Please upload an image first.');
+                    return;
+                }
+
+                const file = imageInput.files[0];
+                const type = resizeType.value;
+                let width = parseInt(widthInput.value);
+                let height = parseInt(heightInput.value);
+
+                if (isNaN(width) width = 0;
+                if (isNaN(height)) height = 0;
+
+                if (type === 'percentage') {
+                    width = (originalWidth * width) / 100;
+                    height = (originalHeight * height) / 100;
+                }
+
+                if (maintainAspectRatio.checked) {
+                    if (width > 0 && height === 0) {
+                        height = (originalHeight / originalWidth) * width;
+                    } else if (height > 0 && width === 0) {
+                        width = (originalWidth / originalHeight) * height;
+                    }
+                }
+
+                if (width <= 0 || height <= 0) {
+                    alert('Please enter valid dimensions.');
+                    return;
+                }
+
+                // Create a canvas to resize the image
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Display resized image
+                    resizedImage.innerHTML = ''; // Clear previous result
+                    const resizedImg = document.createElement('img');
+                    resizedImg.src = canvas.toDataURL();
+                    resizedImage.appendChild(resizedImg);
+
+                    // Download link
+                    const link = document.createElement('a');
+                    link.href = canvas.toDataURL();
+                    link.download = 'resized-image.png';
+                    link.className = 'download-btn';
+                    link.innerHTML = '<i class="fas fa-download"></i> Download';
+                    resizedImage.appendChild(link);
+                };
+            });
+        });
+    </script>
+</body>
+</html>
