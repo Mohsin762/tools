@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate SEO-optimized meta tags for your website. Create title tags, meta descriptions, Open Graph tags, Twitter Cards, and Schema.org structured data.">
+    <meta name="keywords" content="meta tag generator, SEO tools, meta tags, Open Graph tags, Twitter Cards, Schema.org, SEO optimization">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Meta Tag Generator - Online Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .char-count {
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 12px 24px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button-group button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <div class="tool-container">
+            <h2>Meta Tag Generator</h2>
+            <p>Generate SEO-optimized meta tags for your website.</p>
+
+            <!-- Input Fields -->
+            <div class="form-group">
+                <label for="title">Title Tag</label>
+                <input type="text" id="title" placeholder="Enter title (50-60 characters)" maxlength="60">
+                <span class="char-count" id="title-count">0/60</span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Meta Description</label>
+                <textarea id="description" placeholder="Enter description (150-160 characters)" maxlength="160"></textarea>
+                <span class="char-count" id="description-count">0/160</span>
+            </div>
+
+            <div class="form-group">
+                <label for="keywords">Meta Keywords</label>
+                <input type="text" id="keywords" placeholder="Enter keywords (comma-separated)">
+            </div>
+
+            <div class="form-group">
+                <label for="robots">Meta Robots</label>
+                <select id="robots">
+                    <option value="index,follow">Index, Follow</option>
+                    <option value="noindex,follow">Noindex, Follow</option>
+                    <option value="index,nofollow">Index, Nofollow</option>
+                    <option value="noindex,nofollow">Noindex, Nofollow</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="canonical">Canonical URL</label>
+                <input type="url" id="canonical" placeholder="Enter canonical URL">
+            </div>
+
+            <!-- Open Graph Meta Tags -->
+            <div class="form-group">
+                <label for="og-title">Open Graph Title</label>
+                <input type="text" id="og-title" placeholder="Enter Open Graph Title">
+            </div>
+
+            <div class="form-group">
+                <label for="og-description">Open Graph Description</label>
+                <textarea id="og-description" placeholder="Enter Open Graph Description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="og-image">Open Graph Image URL</label>
+                <input type="url" id="og-image" placeholder="Enter Open Graph Image URL">
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button id="generate-btn">Generate Meta Tags</button>
+                <button id="copy-btn">Copy All</button>
+                <button id="download-btn">Download as HTML</button>
+            </div>
+
+            <!-- Output -->
+            <pre id="output"></pre>
+        </div>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const titleInput = document.getElementById('title');
+        const descriptionInput = document.getElementById('description');
+        const keywordsInput = document.getElementById('keywords');
+        const robotsSelect = document.getElementById('robots');
+        const canonicalInput = document.getElementById('canonical');
+        const ogTitleInput = document.getElementById('og-title');
+        const ogDescriptionInput = document.getElementById('og-description');
+        const ogImageInput = document.getElementById('og-image');
+        const generateBtn = document.getElementById('generate-btn');
+        const copyBtn = document.getElementById('copy-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const output = document.getElementById('output');
+
+        // Character Counters
+        titleInput.addEventListener('input', () => {
+            document.getElementById('title-count').textContent = `${titleInput.value.length}/60`;
+        });
+
+        descriptionInput.addEventListener('input', () => {
+            document.getElementById('description-count').textContent = `${descriptionInput.value.length}/160`;
+        });
+
+        // Generate Meta Tags
+        generateBtn.addEventListener('click', () => {
+            const metaTags = `
+<!-- Essential Meta Tags -->
+<title>${titleInput.value}</title>
+<meta name="description" content="${descriptionInput.value}">
+<meta name="keywords" content="${keywordsInput.value}">
+<meta name="robots" content="${robotsSelect.value}">
+<link rel="canonical" href="${canonicalInput.value}">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="${ogTitleInput.value}">
+<meta property="og:description" content="${ogDescriptionInput.value}">
+<meta property="og:image" content="${ogImageInput.value}">
+            `;
+
+            output.textContent = metaTags;
+        });
+
+        // Copy Meta Tags
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(output.textContent);
+            alert('Meta tags copied to clipboard!');
+        });
+
+        // Download Meta Tags
+        downloadBtn.addEventListener('click', () => {
+            const blob = new Blob([output.textContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'meta-tags.html';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
