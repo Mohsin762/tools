@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Speech-to-Text (STT) Tool. Convert spoken words into text in real-time with high accuracy and multiple language support.">
+    <meta name="keywords" content="speech-to-text, STT, transcription, free STT tool, online transcription, real-time speech recognition">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Speech-to-Text Tool - Free Online Transcription</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .tool-container.dark-mode {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .text-output {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .text-output.dark-mode {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #777;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .controls select,
+        .controls button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .controls select.dark-mode,
+        .controls button.dark-mode {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #777;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .action-buttons button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .adsense-ad {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Speech-to-Text Tool -->
+        <section class="tool-container">
+            <h2>Speech-to-Text Tool</h2>
+
+            <!-- Text Output Section -->
+            <textarea class="text-output" id="textOutput" placeholder="Transcribed text will appear here..." readonly></textarea>
+
+            <!-- Controls Section -->
+            <div class="controls">
+                <select id="languageSelect">
+                    <option value="en-US">English (US)</option>
+                    <option value="en-GB">English (UK)</option>
+                    <option value="es-ES">Spanish (Spain)</option>
+                    <option value="fr-FR">French (France)</option>
+                    <option value="de-DE">German (Germany)</option>
+                    <!-- Add more languages as needed -->
+                </select>
+                <button id="startBtn">Start Transcription</button>
+                <button id="stopBtn">Stop Transcription</button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="copyBtn">Copy to Clipboard</button>
+                <button id="downloadTxtBtn">Download as TXT</button>
+                <button id="downloadDocxBtn">Download as DOCX</button>
+            </div>
+
+            <!-- AdSense Ad at the Bottom -->
+            <div class="adsense-ad">
+                <!-- Replace with your AdSense script -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="XXXXXXXXXX"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Speech-to-Text Logic
+        const textOutput = document.getElementById('textOutput');
+        const languageSelect = document.getElementById('languageSelect');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadTxtBtn = document.getElementById('downloadTxtBtn');
+        const downloadDocxBtn = document.getElementById('downloadDocxBtn');
+        let recognition = null;
+
+        // Initialize Speech Recognition
+        if ('webkitSpeechRecognition' in window) {
+            recognition = new webkitSpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+            recognition.lang = languageSelect.value;
+
+            recognition.onresult = (event) => {
+                let transcript = '';
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    transcript += event.results[i][0].transcript;
+                }
+                textOutput.value = transcript;
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                alert('An error occurred. Please try again.');
+            };
+        } else {
+            alert('Speech recognition is not supported in your browser. Please use Chrome or Edge.');
+        }
+
+        // Start Transcription
+        startBtn.addEventListener('click', () => {
+            if (recognition) {
+                recognition.lang = languageSelect.value;
+                recognition.start();
+                startBtn.disabled = true;
+                stopBtn.disabled = false;
+            }
+        });
+
+        // Stop Transcription
+        stopBtn.addEventListener('click', () => {
+            if (recognition) {
+                recognition.stop();
+                startBtn.disabled = false;
+                stopBtn.disabled = true;
+            }
+        });
+
+        // Copy to Clipboard
+        copyBtn.addEventListener('click', () => {
+            textOutput.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard!');
+        });
+
+        // Download as TXT
+        downloadTxtBtn.addEventListener('click', () => {
+            const blob = new Blob([textOutput.value], { type: 'text/plain' });
+            const downloadLink = document.createElement('a');
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = 'transcription.txt';
+            downloadLink.click();
+        });
+
+        // Download as DOCX (requires a library like docx.js)
+        downloadDocxBtn.addEventListener('click', () => {
+            alert('Download as DOCX requires a backend solution or a library like docx.js.');
+        });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 's') {
+                startBtn.click();
+            } else if (e.ctrlKey && e.key === 't') {
+                stopBtn.click();
+            } else if (e.ctrlKey && e.key === 'c') {
+                copyBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
