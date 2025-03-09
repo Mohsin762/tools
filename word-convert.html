@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert Word documents (.doc, .docx) to high-quality PDF files online with our free Word to PDF converter tool. Preserve text formatting, images, and layout.">
+    <meta name="keywords" content="Word to PDF, convert Word to PDF, Word converter, online PDF tool, editable Word document">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Word to PDF Converter - Convert Word to PDF Online</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #upload-section, #result-section {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        input[type="file"], button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="file"]:focus, button:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        #ad-space {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 25px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            #upload-section, #result-section {
+                padding: 15px;
+            }
+        }
+    </style>
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Word to PDF Converter</h1>
+    </header>
+    <main>
+        <!-- Upload Section -->
+        <section id="upload-section">
+            <label for="word-input">Upload Word Document:</label>
+            <input type="file" id="word-input" accept=".doc,.docx">
+            <button id="convert-btn">Convert to PDF</button>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section">
+            <h2>Converted PDF</h2>
+            <div id="converted-file"></div>
+        </section>
+
+        <!-- Ad Space -->
+        <section id="ad-space">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Word to PDF Converter. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const wordInput = document.getElementById('word-input');
+            const convertBtn = document.getElementById('convert-btn');
+            const convertedFile = document.getElementById('converted-file');
+
+            // Convert Word to PDF
+            convertBtn.addEventListener('click', async function () {
+                if (wordInput.files.length === 0) {
+                    alert('Please upload a Word document first.');
+                    return;
+                }
+
+                const file = wordInput.files[0];
+                const formData = new FormData();
+                formData.append('file', file);
+
+                // Use a third-party API for conversion (e.g., CloudConvert or PDF.co)
+                const apiUrl = 'https://api.cloudconvert.com/v2/convert'; // Replace with your API endpoint
+                const apiKey = 'YOUR_API_KEY'; // Replace with your API key
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${apiKey}`,
+                        },
+                        body: formData,
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Conversion failed. Please try again.');
+                    }
+
+                    const result = await response.json();
+                    const downloadUrl = result.downloadUrl; // URL to download the converted file
+
+                    // Display download link
+                    convertedFile.innerHTML = `
+                        <p>Your Word document has been converted to PDF!</p>
+                        <a href="${downloadUrl}" class="download-btn" download="converted-file.pdf">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    `;
+                } catch (error) {
+                    console.error('Error converting Word to PDF:', error);
+                    alert('An error occurred while converting the Word document. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
