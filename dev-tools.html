@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a wide range of free online tools for developers. Convert HTML to Markdown, format JSON, generate meta tags, create robots.txt, and minify CSS and JavaScript.">
+    <meta name="keywords" content="online tools, developer tools, HTML to Markdown, JSON formatter, meta tag generator, robots.txt generator, CSS minifier, JS minifier, free tools">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Developer Tools - Free Online Tools for Developers</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-card i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tool-card a {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .tool-card a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Developer Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html" class="active">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Tools for Developers</h2>
+            <p>Explore a wide range of free tools for developers. Convert HTML to Markdown, format JSON, generate meta tags, create robots.txt, and minify CSS and JavaScript.</p>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="tools-grid">
+            <!-- HTML to Markdown -->
+            <div class="tool-card">
+                <i class="fas fa-code"></i>
+                <h3>HTML to Markdown</h3>
+                <p>Convert HTML code to Markdown format.</p>
+                <a href="html-to-md.html">Use Tool</a>
+            </div>
+
+            <!-- JSON Formatter -->
+            <div class="tool-card">
+                <i class="fas fa-file-code"></i>
+                <h3>JSON Formatter</h3>
+                <p>Format and validate JSON data.</p>
+                <a href="json-formatter.html">Use Tool</a>
+            </div>
+
+            <!-- Meta Tag Generator -->
+            <div class="tool-card">
+                <i class="fas fa-tags"></i>
+                <h3>Meta Tag Generator</h3>
+                <p>Generate meta tags for SEO optimization.</p>
+                <a href="meta-tags.html">Use Tool</a>
+            </div>
+
+            <!-- Robots.txt Generator -->
+            <div class="tool-card">
+                <i class="fas fa-robot"></i>
+                <h3>Robots.txt Generator</h3>
+                <p>Generate a robots.txt file for your website.</p>
+                <a href="robots-txt.html">Use Tool</a>
+            </div>
+
+            <!-- CSS Minifier -->
+            <div class="tool-card">
+                <i class="fas fa-file-code"></i>
+                <h3>CSS Minifier</h3>
+                <p>Minify your CSS code for faster loading.</p>
+                <a href="css-minify.html">Use Tool</a>
+            </div>
+
+            <!-- JS Minifier -->
+            <div class="tool-card">
+                <i class="fas fa-file-code"></i>
+                <h3>JS Minifier</h3>
+                <p>Minify your JavaScript code for faster loading.</p>
+                <a href="js-minify.html">Use Tool</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Highlight active navigation link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
