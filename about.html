@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about Online Tools, its purpose, and the developer behind it. Explore free tools for image and PDF processing.">
-    <meta name="keywords" content="about online tools, image tools, PDF tools, free online tools, developer bio">
+    <meta name="description" content="About Online Tools. Learn about our mission, the tools we offer, and the developer behind the website.">
+    <meta name="keywords" content="about, online tools, image tools, PDF tools, free tools, developer bio">
     <meta name="author" content="Mohsin Rajput">
     <title>About - Online Tools</title>
     <!-- Google Fonts -->
@@ -24,6 +24,9 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -36,7 +39,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 28px;
         }
 
         nav {
@@ -54,84 +57,61 @@
             transition: color 0.3s;
         }
 
+        nav a.active {
+            color: #ffdd57;
+        }
+
         nav a:hover {
             color: #ffdd57;
         }
 
-        nav a.active {
-            color: #ffdd57;
-            font-weight: 600;
-        }
-
         main {
+            flex: 1;
             padding: 20px;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
+            width: 100%;
         }
 
-        .about-section {
+        .about-content {
             background-color: #fff;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
         }
 
-        .about-section h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #007bff;
+        .about-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .about-section p {
+        .about-content h3 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .about-content p {
             font-size: 16px;
             color: #666;
-            margin-bottom: 20px;
-        }
-
-        .developer-section {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .developer-section h2 {
-            font-size: 28px;
             margin-bottom: 15px;
-            color: #007bff;
         }
 
-        .developer-section p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .contact-section {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .contact-section h2 {
-            font-size: 28px;
+        .about-content ul {
+            margin-left: 20px;
             margin-bottom: 15px;
-            color: #007bff;
         }
 
-        .contact-section p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
+        .about-content ul li {
+            margin-bottom: 10px;
         }
 
         .social-links {
             display: flex;
+            justify-content: center;
             gap: 15px;
+            margin-top: 20px;
         }
 
         .social-links a {
@@ -150,6 +130,16 @@
             text-align: center;
             padding: 20px;
             margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
         }
 
         footer p {
@@ -158,16 +148,20 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .about-section h2,
-            .developer-section h2,
-            .contact-section h2 {
-                font-size: 24px;
+            .about-content h2 {
+                font-size: 28px;
             }
 
-            .about-section p,
-            .developer-section p,
-            .contact-section p {
+            .about-content h3 {
+                font-size: 22px;
+            }
+
+            .about-content p {
                 font-size: 14px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -180,43 +174,44 @@
         <a href="index.html">Home</a>
         <a href="img-tools.html">Image Tools</a>
         <a href="pdf-tools.html">PDF Tools</a>
-        <a href="about.html" class="active">About</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
     </nav>
     <main>
-        <!-- About Section -->
-        <section class="about-section">
+        <!-- About Content -->
+        <section class="about-content">
             <h2>About Online Tools</h2>
-            <p>
-                Welcome to <strong>Online Tools</strong>, your one-stop destination for free and easy-to-use tools for image and PDF processing. Our mission is to simplify your workflow by providing high-quality tools that are accessible to everyone.
-            </p>
-            <p>
-                Whether you need to compress images, convert PDFs, or resize files, our tools are designed to help you achieve your goals quickly and efficiently. All tools are free to use, and no registration is required.
-            </p>
-        </section>
+            <p>Welcome to Online Tools! Our mission is to provide free, easy-to-use tools for image and PDF processing, text manipulation, and more. Whether you're a developer, designer, or casual user, our tools are designed to simplify your tasks and save you time.</p>
 
-        <!-- Developer Section -->
-        <section class="developer-section">
-            <h2>About the Developer</h2>
-            <p>
-                Hi, I'm <strong>Mohsin Rajput</strong>, the developer behind Online Tools. I am a passionate software engineer with expertise in web development, image processing, and PDF manipulation. My goal is to create tools that make everyday tasks easier for users around the world.
-            </p>
-            <p>
-                With years of experience in the tech industry, I strive to deliver reliable and user-friendly solutions. I believe in the power of open-source software and aim to contribute to the community by providing free tools.
-            </p>
-        </section>
+            <h3>Our Tools</h3>
+            <p>We offer a wide range of tools, including:</p>
+            <ul>
+                <li>Image compression and resizing.</li>
+                <li>PDF merging, splitting, and unlocking.</li>
+                <li>Text case conversion and formatting.</li>
+                <li>Developer utilities like JSON formatting and HTML to Markdown conversion.</li>
+            </ul>
 
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <h2>Contact Information</h2>
-            <p>
-                If you have any questions, suggestions, or feedback, feel free to reach out to me. I'd love to hear from you!
-            </p>
+            <h3>About the Developer</h3>
+            <p>Hi, I'm <strong>Mohsin Rajput</strong>, the developer behind Online Tools. With a passion for web development and problem-solving, I created this platform to help users streamline their workflows. My expertise includes:</p>
+            <ul>
+                <li>Front-end and back-end web development.</li>
+                <li>Building user-friendly and responsive interfaces.</li>
+                <li>Creating efficient and scalable tools.</li>
+            </ul>
+
+            <h3>Our Goal</h3>
+            <p>Our goal is to make online tools accessible to everyone. We believe in providing high-quality, free resources that empower users to achieve their goals without unnecessary complexity.</p>
+
+            <h3>Contact Information</h3>
+            <p>If you have any questions, feedback, or suggestions, feel free to reach out:</p>
             <div class="social-links">
-                <a href="https://github.com/Mohsin762" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
                 <a href="https://www.linkedin.com/in/mohsin-nawaz-858148347/" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Mohsin762" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:mohsinnawazrajput@gmail.com" aria-label="Email">
                     <i class="fas fa-envelope"></i>
@@ -225,7 +220,25 @@
         </section>
     </main>
     <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
         <p>&copy; 2025 Online Tools. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Highlight active navigation link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
