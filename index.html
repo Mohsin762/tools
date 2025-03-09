@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore a wide range of free online tools for image and PDF processing. Compress images, convert PDFs, and more!">
-    <meta name="keywords" content="image tools, PDF tools, online tools, compress images, convert PDF, free tools">
-    <meta name="author" content="Your Name">
-    <title>Online Tools - Image and PDF Tools</title>
+    <meta name="description" content="Explore a wide range of free online tools for image, PDF, text, developer, and utility processing. Compress images, convert files, generate QR codes, and more!">
+    <meta name="keywords" content="online tools, image tools, PDF tools, text tools, developer tools, utility tools, free tools, compress images, convert PDF, QR code generator, password generator">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Online Tools - Free Tools for Image, PDF, Text, and More</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
@@ -24,6 +24,9 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -54,14 +57,20 @@
             transition: color 0.3s;
         }
 
+        nav a.active {
+            color: #ffdd57;
+        }
+
         nav a:hover {
             color: #ffdd57;
         }
 
         main {
+            flex: 1;
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .hero {
@@ -141,6 +150,16 @@
             text-align: center;
             padding: 20px;
             margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
         }
 
         footer p {
@@ -160,6 +179,14 @@
             .tools-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
         }
     </style>
 </head>
@@ -168,63 +195,179 @@
         <h1>Online Tools</h1>
     </header>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="img-tools.html">Image Tools</a>
         <a href="pdf-tools.html">PDF Tools</a>
-        <a href="about.html">About</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
     </nav>
     <main>
         <!-- Hero Section -->
         <section class="hero">
             <h2>Your All-in-One Online Toolbox</h2>
-            <p>Explore a wide range of free tools for image and PDF processing. Compress images, convert PDFs, and more!</p>
+            <p>Explore a wide range of free tools for image, PDF, text, developer, and utility processing. Compress images, convert files, generate QR codes, and more!</p>
         </section>
 
         <!-- Tools Grid -->
-       <section class="tools-grid">
-    <!-- Image Tools -->
-    <div class="tool-card">
-        <i class="fas fa-image"></i>
-        <h3>Image Compressor</h3>
-        <p>Compress and optimize your images for web use.</p>
-        <a href="img-compress.html">Use Tool</a>
-    </div>
-    <div class="tool-card">
-        <i class="fas fa-file-image"></i>
-        <h3>Image Converter</h3>
-        <p>Convert images to different formats like JPEG, PNG, and WebP.</p>
-        <a href="img-convert.html">Use Tool</a>
-    </div>
-    <div class="tool-card">
-        <i class="fas fa-crop"></i>
-        <h3>Image Resizer</h3>
-        <p>Resize images to specific dimensions without losing quality.</p>
-        <a href="img-resize.html">Use Tool</a>
-    </div>
+        <section class="tools-grid">
+            <!-- Image Tools -->
+            <div class="tool-card">
+                <i class="fas fa-image"></i>
+                <h3>Image Compressor</h3>
+                <p>Compress and optimize your images for web use.</p>
+                <a href="img-compress.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-crop-alt"></i> <!-- Updated Icon for Image Cropper -->
+                <h3>Image Cropper</h3>
+                <p>Crop images to your desired dimensions.</p>
+                <a href="img-crop.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-image"></i>
+                <h3>Image Converter</h3>
+                <p>Convert images to different formats like JPEG, PNG, and WebP.</p>
+                <a href="img-convert.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-expand-arrows-alt"></i> <!-- Updated Icon for Image Resizer -->
+                <h3>Image Resizer</h3>
+                <p>Resize images to specific dimensions without losing quality.</p>
+                <a href="img-resize.html">Use Tool</a>
+            </div>
 
-    <!-- PDF Tools -->
-    <div class="tool-card">
-        <i class="fas fa-file-pdf"></i>
-        <h3>PDF Compressor</h3>
-        <p>Reduce the size of your PDF files without compromising quality.</p>
-        <a href="pdf-compress.html">Use Tool</a>
-    </div>
-    <div class="tool-card">
-        <i class="fas fa-file-export"></i>
-        <h3>PDF to Word</h3>
-        <p>Convert PDF files to editable Word documents.</p>
-        <a href="pdf-convert.html">Use Tool</a>
-    </div>
-    <div class="tool-card">
-        <i class="fas fa-file-import"></i>
-        <h3>Word to PDF</h3>
-        <p>Convert Word documents to PDF files.</p>
-        <a href="word-convert.html">Use Tool</a>
-    </div>
-</section>
+            <!-- PDF Tools -->
+            <div class="tool-card">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Compressor</h3>
+                <p>Reduce the size of your PDF files without compromising quality.</p>
+                <a href="pdf-compress.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-pdf"></i> <!-- Icon for PDF Merger -->
+                <h3>PDF Merger</h3>
+                <p>Merge multiple PDF files into a single document.</p>
+                <a href="pdf-merge.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-pdf"></i> <!-- Icon for PDF Splitter -->
+                <h3>PDF Splitter</h3>
+                <p>Split a PDF file into multiple documents.</p>
+                <a href="pdf-split.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-pdf"></i> <!-- Icon for PDF Unlocker -->
+                <h3>PDF Unlocker</h3>
+                <p>Remove password protection from PDF files.</p>
+                <a href="pdf-unlock.html">Use Tool</a>
+            </div>
+
+            <!-- Text Tools -->
+            <div class="tool-card">
+                <i class="fas fa-text-height"></i>
+                <h3>Text Case Converter</h3>
+                <p>Convert text between uppercase, lowercase, and sentence case.</p>
+                <a href="text-case.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Text to Speech</h3>
+                <p>Convert text into natural-sounding speech.</p>
+                <a href="text-to-speech.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-microphone"></i>
+                <h3>Speech to Text</h3>
+                <p>Convert spoken words into text.</p>
+                <a href="speech-to-text.html">Use Tool</a>
+            </div>
+
+            <!-- Developer Tools -->
+            <div class="tool-card">
+                <i class="fas fa-code"></i>
+                <h3>HTML to Markdown</h3>
+                <p>Convert HTML code to Markdown format.</p>
+                <a href="html-to-md.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-code"></i>
+                <h3>JSON Formatter</h3>
+                <p>Format and validate JSON data.</p>
+                <a href="json-formatter.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-tags"></i>
+                <h3>Meta Tag Generator</h3>
+                <p>Generate meta tags for SEO optimization.</p>
+                <a href="meta-tags.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-robot"></i>
+                <h3>Robots.txt Generator</h3>
+                <p>Generate a robots.txt file for your website.</p>
+                <a href="robots-txt.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-code"></i>
+                <h3>CSS Minifier</h3>
+                <p>Minify your CSS code for faster loading.</p>
+                <a href="css-minify.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-code"></i>
+                <h3>JS Minifier</h3>
+                <p>Minify your JavaScript code for faster loading.</p>
+                <a href="js-minify.html">Use Tool</a>
+            </div>
+
+            <!-- Utility Tools -->
+            <div class="tool-card">
+                <i class="fas fa-qrcode"></i>
+                <h3>QR Code Generator</h3>
+                <p>Generate QR codes for URLs, text, and more.</p>
+                <a href="qr-code.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-link"></i>
+                <h3>URL Shortener</h3>
+                <p>Shorten long URLs for easy sharing.</p>
+                <a href="url-shortener.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-key"></i>
+                <h3>Password Generator</h3>
+                <p>Generate strong and secure passwords.</p>
+                <a href="password-generator.html">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-ruler"></i>
+                <h3>Unit Converter</h3>
+                <p>Convert between different units of measurement.</p>
+                <a href="unit-converter.html">Use Tool</a>
+            </div>
+        </section>
     </main>
     <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
         <p>&copy; 2025 Online Tools. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Highlight active navigation link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
