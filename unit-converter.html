@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert between various units of measurement quickly and accurately. Supports length, weight, volume, temperature, speed, area, time, energy, pressure, digital storage, and angle conversions.">
+    <meta name="keywords" content="unit converter, length converter, weight converter, temperature converter, speed converter, area converter, time converter, energy converter, pressure converter, digital storage converter, angle converter">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Unit Converter - Online Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inline CSS for Fast Loading -->
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 12px 24px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #conversion-result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            border: none;
+            outline: none;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button-group button {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- AdSense Script (Replace with your AdSense code) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Ad Unit 1 -->
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="tool-container">
+            <h2>Unit Converter</h2>
+            <p>Convert between various units of measurement quickly and accurately.</p>
+
+            <!-- Input Fields -->
+            <div class="form-group">
+                <label for="unit-category">Select Unit Category</label>
+                <select id="unit-category">
+                    <option value="length">Length</option>
+                    <option value="weight">Weight/Mass</option>
+                    <option value="volume">Volume</option>
+                    <option value="temperature">Temperature</option>
+                    <option value="speed">Speed</option>
+                    <option value="area">Area</option>
+                    <option value="time">Time</option>
+                    <option value="energy">Energy</option>
+                    <option value="pressure">Pressure</option>
+                    <option value="digital-storage">Digital Storage</option>
+                    <option value="angle">Angle</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="from-unit">From Unit</label>
+                <select id="from-unit"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="to-unit">To Unit</label>
+                <select id="to-unit"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="input-value">Enter Value</label>
+                <input type="number" id="input-value" placeholder="Enter value...">
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button id="convert-btn">Convert</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+
+            <!-- Conversion Result -->
+            <pre id="conversion-result"></pre>
+        </div>
+
+        <!-- Ad Unit 2 -->
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Functionality -->
+    <script>
+        // Unit Conversion Data
+        const unitData = {
+            length: {
+                meters: 1,
+                kilometers: 0.001,
+                miles: 0.000621371,
+                feet: 3.28084,
+                inches: 39.3701,
+            },
+            weight: {
+                grams: 1,
+                kilograms: 0.001,
+                pounds: 0.00220462,
+                ounces: 0.035274,
+            },
+            volume: {
+                liters: 1,
+                milliliters: 1000,
+                gallons: 0.264172,
+                cups: 4.22675,
+            },
+            temperature: {
+                celsius: 1,
+                fahrenheit: 33.8,
+                kelvin: 274.15,
+            },
+            speed: {
+                'meters/second': 1,
+                'kilometers/hour': 3.6,
+                'miles/hour': 2.23694,
+            },
+            area: {
+                'square meters': 1,
+                'square kilometers': 0.000001,
+                acres: 0.000247105,
+                hectares: 0.0001,
+            },
+            time: {
+                seconds: 1,
+                minutes: 0.0166667,
+                hours: 0.000277778,
+                days: 0.0000115741,
+                weeks: 0.00000165344,
+                years: 0.0000000316881,
+            },
+            energy: {
+                joules: 1,
+                calories: 0.239006,
+                'kilowatt-hours': 0.000000277778,
+            },
+            pressure: {
+                pascals: 1,
+                bars: 0.00001,
+                psi: 0.000145038,
+                atmospheres: 0.00000986923,
+            },
+            'digital-storage': {
+                bytes: 1,
+                kilobytes: 0.001,
+                megabytes: 0.000001,
+                gigabytes: 0.000000001,
+                terabytes: 0.000000000001,
+            },
+            angle: {
+                degrees: 1,
+                radians: 0.0174533,
+                gradians: 1.11111,
+            },
+        };
+
+        // DOM Elements
+        const unitCategory = document.getElementById('unit-category');
+        const fromUnit = document.getElementById('from-unit');
+        const toUnit = document.getElementById('to-unit');
+        const inputValue = document.getElementById('input-value');
+        const convertBtn = document.getElementById('convert-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const conversionResult = document.getElementById('conversion-result');
+
+        // Populate Units
+        function populateUnits() {
+            const category = unitCategory.value;
+            const units = Object.keys(unitData[category]);
+
+            fromUnit.innerHTML = units.map(unit => `<option value="${unit}">${unit}</option>`).join('');
+            toUnit.innerHTML = units.map(unit => `<option value="${unit}">${unit}</option>`).join('');
+        }
+
+        // Convert Units
+        function convertUnits() {
+            const category = unitCategory.value;
+            const from = fromUnit.value;
+            const to = toUnit.value;
+            const value = parseFloat(inputValue.value);
+
+            if (isNaN(value)) {
+                alert('Please enter a valid number.');
+                return;
+            }
+
+            const fromFactor = unitData[category][from];
+            const toFactor = unitData[category][to];
+            const result = (value / fromFactor) * toFactor;
+
+            conversionResult.textContent = `${value} ${from} = ${result.toFixed(4)} ${to}`;
+        }
+
+        // Reset Form
+        function resetForm() {
+            inputValue.value = '';
+            conversionResult.textContent = '';
+        }
+
+        // Event Listeners
+        unitCategory.addEventListener('change', populateUnits);
+        convertBtn.addEventListener('click', convertUnits);
+        resetBtn.addEventListener('click', resetForm);
+
+        // Initialize
+        populateUnits();
+    </script>
+</body>
+</html>
