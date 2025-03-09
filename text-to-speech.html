@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Text-to-Speech (TTS) Tool. Convert text into natural-sounding speech in multiple languages and voices.">
+    <meta name="keywords" content="text-to-speech, TTS, speech synthesis, free TTS tool, online TTS, natural-sounding speech">
+    <meta name="author" content="Mohsin Rajput">
+    <title>Text-to-Speech Tool - Free Online Speech Synthesis</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .tool-container.dark-mode {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .text-input {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .text-input.dark-mode {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #777;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .controls select,
+        .controls input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .controls select.dark-mode,
+        .controls input.dark-mode {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #777;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .action-buttons button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .adsense-ad {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Text-to-Speech Tool -->
+        <section class="tool-container">
+            <h2>Text-to-Speech Tool</h2>
+
+            <!-- Text Input Section -->
+            <textarea class="text-input" id="textInput" placeholder="Enter or paste your text here..."></textarea>
+
+            <!-- Controls Section -->
+            <div class="controls">
+                <select id="voiceSelect">
+                    <!-- Voices will be populated dynamically -->
+                </select>
+                <select id="languageSelect">
+                    <option value="en-US">English (US)</option>
+                    <option value="en-GB">English (UK)</option>
+                    <option value="es-ES">Spanish (Spain)</option>
+                    <option value="fr-FR">French (France)</option>
+                    <option value="de-DE">German (Germany)</option>
+                    <!-- Add more languages as needed -->
+                </select>
+                <input type="range" id="speedControl" min="0.5" max="2" step="0.1" value="1">
+                <input type="range" id="pitchControl" min="0.5" max="2" step="0.1" value="1">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="playBtn">Play</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="stopBtn">Stop</button>
+                <button id="downloadBtn">Download as MP3</button>
+            </div>
+
+            <!-- AdSense Ad at the Bottom -->
+            <div class="adsense-ad">
+                <!-- Replace with your AdSense script -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="XXXXXXXXXX"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Text-to-Speech Logic
+        const textInput = document.getElementById('textInput');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const languageSelect = document.getElementById('languageSelect');
+        const speedControl = document.getElementById('speedControl');
+        const pitchControl = document.getElementById('pitchControl');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        let synth = window.speechSynthesis;
+        let voices = [];
+        let utterance = null;
+
+        // Populate Voices
+        function populateVoices() {
+            voices = synth.getVoices();
+            voiceSelect.innerHTML = '';
+            voices.forEach((voice, i) => {
+                const option = document.createElement('option');
+                option.textContent = `${voice.name} (${voice.lang})`;
+                option.value = i;
+                voiceSelect.appendChild(option);
+            });
+        }
+
+        populateVoices();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = populateVoices;
+        }
+
+        // Play Speech
+        playBtn.addEventListener('click', () => {
+            if (synth.speaking) {
+                console.log('Already speaking...');
+                return;
+            }
+
+            if (textInput.value !== '') {
+                utterance = new SpeechSynthesisUtterance(textInput.value);
+                utterance.voice = voices[voiceSelect.value];
+                utterance.lang = languageSelect.value;
+                utterance.rate = speedControl.value;
+                utterance.pitch = pitchControl.value;
+                synth.speak(utterance);
+            }
+        });
+
+        // Pause Speech
+        pauseBtn.addEventListener('click', () => {
+            if (synth.speaking && !synth.paused) {
+                synth.pause();
+            }
+        });
+
+        // Resume Speech
+        stopBtn.addEventListener('click', () => {
+            if (synth.speaking) {
+                synth.cancel();
+            }
+        });
+
+        // Download as MP3 (Not supported natively, requires a backend solution)
+        downloadBtn.addEventListener('click', () => {
+            alert('Download as MP3 requires a backend solution for audio file generation.');
+        });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'p') {
+                playBtn.click();
+            } else if (e.ctrlKey && e.key === 's') {
+                pauseBtn.click();
+            } else if (e.ctrlKey && e.key === 't') {
+                stopBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
