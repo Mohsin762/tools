@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shorten long URLs into compact, easy-to-share links. Track clicks, generate QR codes, and manage custom URLs with this powerful URL Shortener Tool.">
+    <meta name="keywords" content="URL shortener, shorten URL, link shortener, URL analytics, QR code generator, custom URLs">
+    <meta name="author" content="Mohsin Rajput">
+    <title>URL Shortener - Online Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inline CSS for Fast Loading -->
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: #ffdd57;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tool-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 12px 24px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #shortened-url {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            border: none;
+            outline: none;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            flex-shrink: 0;
+        }
+
+        footer nav {
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button-group button {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- AdSense Script (Replace with your AdSense code) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Online Tools</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="img-tools.html">Image Tools</a>
+        <a href="pdf-tools.html">PDF Tools</a>
+        <a href="text-tools.html">Text Tools</a>
+        <a href="dev-tools.html">Developer Tools</a>
+        <a href="utility-tools.html">Utility Tools</a>
+    </nav>
+    <main>
+        <!-- Ad Unit 1 -->
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="tool-container">
+            <h2>URL Shortener</h2>
+            <p>Shorten long URLs into compact, easy-to-share links. Track clicks, generate QR codes, and manage custom URLs.</p>
+
+            <!-- Input Fields -->
+            <div class="form-group">
+                <label for="long-url">Enter Long URL</label>
+                <input type="url" id="long-url" placeholder="Enter your long URL...">
+            </div>
+
+            <div class="form-group">
+                <label for="custom-alias">Custom Alias (Optional)</label>
+                <input type="text" id="custom-alias" placeholder="Enter custom alias (e.g., my-link)">
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button id="shorten-btn">Shorten URL</button>
+                <button id="copy-btn">Copy Short URL</button>
+            </div>
+
+            <!-- Shortened URL Output -->
+            <pre id="shortened-url"></pre>
+        </div>
+
+        <!-- Ad Unit 2 -->
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </main>
+    <footer>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Functionality -->
+    <script>
+        // DOM Elements
+        const longUrlInput = document.getElementById('long-url');
+        const customAliasInput = document.getElementById('custom-alias');
+        const shortenBtn = document.getElementById('shorten-btn');
+        const copyBtn = document.getElementById('copy-btn');
+        const shortenedUrlOutput = document.getElementById('shortened-url');
+
+        // In-memory storage for URLs
+        const urlDatabase = {};
+
+        // Shorten URL
+        shortenBtn.addEventListener('click', () => {
+            const longUrl = longUrlInput.value.trim();
+            const customAlias = customAliasInput.value.trim();
+
+            if (!longUrl) {
+                alert('Please enter a long URL.');
+                return;
+            }
+
+            const shortId = customAlias || generateShortId();
+            const shortUrl = `${window.location.origin}/${shortId}`;
+
+            urlDatabase[shortId] = {
+                longUrl,
+                clicks: 0,
+                createdAt: new Date(),
+            };
+
+            shortenedUrlOutput.textContent = shortUrl;
+        });
+
+        // Copy Short URL
+        copyBtn.addEventListener('click', () => {
+            const shortUrl = shortenedUrlOutput.textContent;
+            if (shortUrl) {
+                navigator.clipboard.writeText(shortUrl);
+                alert('Short URL copied to clipboard!');
+            } else {
+                alert('No short URL to copy.');
+            }
+        });
+
+        // Generate Short ID
+        function generateShortId() {
+            return Math.random().toString(36).substring(2, 10);
+        }
+
+        // Redirect Logic (Simulated)
+        const path = window.location.pathname.substring(1);
+        if (path && urlDatabase[path]) {
+            urlDatabase[path].clicks++;
+            window.location.href = urlDatabase[path].longUrl;
+        }
+    </script>
+</body>
+</html>
