@@ -166,6 +166,35 @@
             margin: 0;
         }
 
+        /* Backlink Buttons */
+        .backlinks {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .backlinks p {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .backlink-button {
+            display: inline-block;
+            background-color: #ffdd57;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .backlink-button:hover {
+            background-color: #ffc107;
+            transform: translateY(-2px);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h2 {
@@ -356,6 +385,14 @@
             <a href="disclaimer.html">Disclaimer</a>
             <a href="privacy.html">Privacy Policy</a>
         </nav>
+        
+        <!-- Backlinks to your websites -->
+        <div class="backlinks">
+            <p>Check out my other projects:</p>
+            <a href="https://kaidoanime.com" class="backlink-button" target="_blank">Visit Kaido Anime</a>
+            <a href="https://diamondbold.com" class="backlink-button" target="_blank">Visit Diamond Bold</a>
+        </div>
+
         <p>&copy; 2025 Online Tools. All rights reserved.</p>
     </footer>
 
